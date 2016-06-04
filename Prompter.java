@@ -13,4 +13,8 @@ public class Prompter {
     char guess = guessAsString.charAt(0);
     return mGame.applyGuess(guess);
   }
+
+  public void displayProgress() {
+    System.out.printf("Try to solve:  %s\n", mGame.getCurrentProgress());
+  }
 }
