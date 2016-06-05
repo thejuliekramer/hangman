@@ -10,6 +10,10 @@ public class Game {
     mMisses = "";
   }
 
+  public String getAnswer() {
+    return mAnswer;
+  }
+
   public boolean applyGuess(String letters) {
     if (letters.length() == 0) {
       throw new IllegalArgumentException("No letter found.");
@@ -42,6 +46,10 @@ public class Game {
 
   public int getRemainingTries() {
     return MAX_MISSES - mMisses.length();
+  }
+
+  public boolean isSolved() {
+    return getCurrentProgress().indexOf('-') == -1;
   }
 
   private char validateGuess(char letter) {
